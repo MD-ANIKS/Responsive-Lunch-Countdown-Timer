@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+    font-family: 'Red Hat Text', sans-serif;
+    overflow: hidden;
+  }
+  :root {
+    --grayish-blue: hsl(237, 18%, 59%);
+    --soft-red: hsl(345, 95%, 68%);
+    --white: hsl(0, 0%, 100%);
+    --dark-desaturated-blue: hsl(236, 21%, 26%);
+    --Very-dark-blue: hsl(235, 16%, 14%);
+    --mostly-black-blue: hsl(234, 17%, 12%);
+  }
+  #countdown-area {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: rgb(35, 29, 43);
+    position: relative;
+  }
+  #countdown-area::after {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/bg-stars.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center center;
+  }
+  #countdown-area .container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #countdown-area .container::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    height: 28vh;
+    background-image: url("../images/pattern-hills.svg");
+    background-position: center center;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    z-index: 888;
+  }
+  h1.launching {
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 3px;
+    font-size: 20px;
+  }
+  
+  .deadline > div > span {
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .deadline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    padding-bottom: 10vh;
+    grid-gap: 25px;
+  }
+  
+  .deadline > div > h4 {
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    background: var(--dark-desaturated-blue);
+    color: var(--soft-red);
+    font-size: 35px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 7px 0px var(--mostly-black-blue);
+  }
+  
+  .deadline h4::before, .deadline h4::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: rgb(35, 29, 43);
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - 5px);
+    z-index: 6;
+    right: -5px;
+}
+
+.deadline>div::after {
+  content: '';
+  width: 110px;
+  height: 56px;
+  background: #1e1e254f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+}
+.deadline>div {
+  position: relative;
+  overflow: hidden;
+}
+
+  .deadline h4::before{
+    left: -5px;
+  }
+
+
+  .social {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 26px;
+  }
+  
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: 99999;
+    text-align: center;
+    width: 100%;
+    color: var(--grayish-blue);
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/* responsive  */
+@media screen and (max-width: 768px) {
+    .deadline {
+        grid-gap: 15px;
+    }
+
+    .deadline>div::after {
+      content: '';
+      width: 110px;
+      height: 36.5px;
+      background: #1e1e254f;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .deadline > div > h4 {
+        max-width: 70px;
+        max-height: 70px;
+        line-height: 70px;
+    }
+
+    h1.launching {
+        font-size: 25px;
+        padding: 0px 38px;
+    }
+
+    .deadline > div > span {
+        font-size: 8px;
+    }
+
+    #countdown-area .container::after {
+        left: -235%;
+        width: 335vw;
+        height: 26vh;
+    }
+
+    #countdown-area::after {
+        width: 123%;
+        height: 86%;
+    }
+}
